@@ -9,9 +9,10 @@
 import UIKit
 import Material
 
-class AppSearchBarController: SearchBarController {
+class AppSearchBarController: SearchBarController, UITextFieldDelegate {
     fileprivate var backButton: IconButton!
     fileprivate var moreButton: IconButton!
+    fileprivate var nc = NotificationCenter.default
     
     open override func prepare() {
         super.prepare()
@@ -19,6 +20,7 @@ class AppSearchBarController: SearchBarController {
         prepareMoreButton()
         prepareStatusBar()
         prepareSearchBar()
+        searchBar.textField.delegate = self
     }
 }
 
@@ -42,5 +44,13 @@ extension AppSearchBarController {
     fileprivate func prepareSearchBar() {
         searchBar.leftViews = [backButton]
         searchBar.rightViews = [moreButton]
+    }
+}
+
+extension AppSearchBarController
+{
+    func textFieldDidBeginEditing(_ textField: UITextField)
+    {
+        nc.post(name: Notification.Name(NotiName.SEARCH_TEXT_CHANGED), object: textField.text!)
     }
 }

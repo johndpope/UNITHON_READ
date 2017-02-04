@@ -15,4 +15,5 @@ class CellIdentifier
     static let PATTERNCELL = "PATTERNCELL"
     static let RECOMMENDCELL = "RECOMMENDCELL"
     static let NOTICECELL = "NOTICECELL"
+    static let SEARCHBOOKCELL = "SEARCHBOOKCELL"
 }

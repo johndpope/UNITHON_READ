@@ -25,6 +25,8 @@
 		F246A5A01E461431002D8124 /* BookCrossVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F246A59F1E461431002D8124 /* BookCrossVC.swift */; };
 		F246A5A21E461463002D8124 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F246A5A11E461463002D8124 /* Search.storyboard */; };
 		F246A5A41E4619E8002D8124 /* AppPageTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F246A5A31E4619E8002D8124 /* AppPageTabBarController.swift */; };
+		F246A5A81E463CEF002D8124 /* SearchBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F246A5A71E463CEF002D8124 /* SearchBookCell.swift */; };
+		F246A5AC1E4642EF002D8124 /* NotiName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F246A5AB1E4642EF002D8124 /* NotiName.swift */; };
 		F2DC0FC21E44924800457E1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DC0FC11E44924800457E1A /* AppDelegate.swift */; };
 		F2DC0FC41E44924800457E1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DC0FC31E44924800457E1A /* ViewController.swift */; };
 		F2DC0FC71E44924800457E1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2DC0FC51E44924800457E1A /* Main.storyboard */; };
@@ -68,6 +70,8 @@
 		F246A59F1E461431002D8124 /* BookCrossVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCrossVC.swift; sourceTree = "<group>"; };
 		F246A5A11E461463002D8124 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		F246A5A31E4619E8002D8124 /* AppPageTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPageTabBarController.swift; sourceTree = "<group>"; };
+		F246A5A71E463CEF002D8124 /* SearchBookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBookCell.swift; sourceTree = "<group>"; };
+		F246A5AB1E4642EF002D8124 /* NotiName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotiName.swift; sourceTree = "<group>"; };
 		F2DC0FBE1E44924800457E1A /* UNITHON4TH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UNITHON4TH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2DC0FC11E44924800457E1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2DC0FC31E44924800457E1A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				F246A59B1E461416002D8124 /* TotalBookVC.swift */,
 				F246A59D1E461423002D8124 /* MyBookVC.swift */,
 				F246A59F1E461431002D8124 /* BookCrossVC.swift */,
+				F246A5A71E463CEF002D8124 /* SearchBookCell.swift */,
 			);
 			name = SearchTabViews;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				F2DC0FF21E44EEF400457E1A /* ViewIdentifier.swift */,
 				F2DC0FF41E44F57C00457E1A /* CellIdentifier.swift */,
 				F2DC0FF61E44F6F700457E1A /* AppColor.swift */,
+				F246A5AB1E4642EF002D8124 /* NotiName.swift */,
 			);
 			name = Constant;
 			sourceTree = "<group>";
@@ -414,6 +420,7 @@
 				F246A5A41E4619E8002D8124 /* AppPageTabBarController.swift in Sources */,
 				F20C82851E45FA3A00FC7617 /* PhotoCaptionCell.swift in Sources */,
 				F2DC0FE81E44E79700457E1A /* StoryboardExtension.swift in Sources */,
+				F246A5AC1E4642EF002D8124 /* NotiName.swift in Sources */,
 				33CF1B511E45924E00196BD1 /* App.swift in Sources */,
 				F2DC0FCA1E44924800457E1A /* UNITHON4TH.xcdatamodeld in Sources */,
 				F246A59E1E461423002D8124 /* MyBookVC.swift in Sources */,
@@ -421,6 +428,7 @@
 				F2DC0FE31E44E67B00457E1A /* AppNavigationController.swift in Sources */,
 				F2DC0FF51E44F57C00457E1A /* CellIdentifier.swift in Sources */,
 				F2DC0FEA1E44EA5200457E1A /* DrawerItem.swift in Sources */,
+				F246A5A81E463CEF002D8124 /* SearchBookCell.swift in Sources */,
 				F20C82811E45F9FA00FC7617 /* DeviceResize.swift in Sources */,
 				F20C82831E45FA1C00FC7617 /* LibraryViewController.swift in Sources */,
 				33CF1B4E1E45894B00196BD1 /* MainViewController.swift in Sources */,
