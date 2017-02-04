@@ -80,7 +80,8 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         prepareTabBarItem(title: "필터", image: Icon.check!, selected: Icon.close!)
     }
 
-    @objc func onSearchBtnClicked() {
+    @objc func onSearchBtnClicked()
+    {
         print("Search")
     }
 

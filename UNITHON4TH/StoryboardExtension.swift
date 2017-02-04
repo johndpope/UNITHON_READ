@@ -16,4 +16,9 @@ extension UIStoryboard {
     {
         return UIStoryboard(name: "Drawer", bundle: nil).instantiateViewController(withIdentifier: identifier)
     }
+    
+    class func searchVC(identifier : String) -> UIViewController
+    {
+        return UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: identifier)
+    }
 }

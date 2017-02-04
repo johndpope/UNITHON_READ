@@ -97,5 +97,19 @@ extension UIViewController
         tabBarItem.image = image
         tabBarItem.selectedImage = selected
     }
+    
+    // 탭 바를 정의하기 위한 함수
+    func preparePageTabBarItem(with title : String)
+    {
+        pageTabBarItem.title = title
+        pageTabBarItem.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 13.0)
+        pageTabBarItem.setTitleColor(AppColor.Gray, for: .normal)
+        pageTabBarItem.setTitleColor(AppColor.Black, for: .selected)
+        pageTabBarItem.setTitleColor(AppColor.Black, for: .focused)
+        pageTabBarItem.setTitleColor(AppColor.Black, for: .highlighted)
+        pageTabBarItem.backgroundColor = AppColor.BG_Gray
+        pageTabBarItem.height = 40
+        pageTabBarItem.pulseAnimation = .point
+    }
 }
 

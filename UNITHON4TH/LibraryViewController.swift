@@ -17,6 +17,7 @@ class LibraryViewController: UIViewController , UICollectionViewDataSource, UICo
     fileprivate var textButton : FlatButton!
     
     // MARK: Layout Concerns
+    
   
     @IBOutlet weak var myCollectionView: UICollectionView!
     
@@ -45,8 +46,16 @@ class LibraryViewController: UIViewController , UICollectionViewDataSource, UICo
     
     @objc func onSearchBtnClicked()
     {
-        print("Search")
+        let totalBookVC = UIStoryboard.searchVC(identifier: ViewIdentifier.TotalBookVC)
+        let myBookVC = UIStoryboard.searchVC(identifier: ViewIdentifier.MyBookVC)
+        let bookCrossVC = UIStoryboard.searchVC(identifier: ViewIdentifier.BookCrossVC)
+        
+        let pageBar = AppPageTabBarController(viewControllers: [totalBookVC,myBookVC,bookCrossVC])
+        let searchVC = AppSearchBarController(rootViewController: pageBar)
+        
+        present(searchVC, animated: true, completion: nil)
     }
+    
     
     @objc func onTestBtnClicked()
     {

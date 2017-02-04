@@ -16,4 +16,5 @@ struct AppColor
     static let Kakao = UIColor(red: 45/255, green: 30/255, blue: 26/255, alpha: 1)
     static let Gray = UIColor(red: 167/255, green: 168/255, blue: 168/255, alpha: 1)
     static let Black = UIColor(red: 45/255, green: 29/255, blue: 28/255, alpha: 1)
+    static let BG_Gray = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
 }
