@@ -49,4 +49,17 @@ struct ApiManager {
             }
         }
     }
+    
+//    func requestSearchResult()
+//    {
+//        Alamofire.request(url).responseJSON { response in
+//            if let json = response.result.value
+//            {
+//                if let json as? [String : String]
+//                {
+//                    
+//                }
+//            }
+//        }
+//    }
 }

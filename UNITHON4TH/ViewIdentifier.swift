@@ -20,4 +20,8 @@ class ViewIdentifier {
     static let RecommendVC = "RecommendVC"
     static let SettingViewController = "SettingViewController"
     static let AppNavigationController = "AppNavigationController"
+    static let AppSearchBarController = "AppSearchBarController"
+    static let TotalBookVC = "TotalBookVC"
+    static let MyBookVC = "MyBookVC"
+    static let BookCrossVC = "BookCrossVC"
 }
