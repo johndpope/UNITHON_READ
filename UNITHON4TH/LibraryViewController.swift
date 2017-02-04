@@ -9,7 +9,8 @@
 import UIKit
 import Material
 import AVFoundation
-
+import Alamofire
+import SwiftyJSON
 class LibraryViewController: UIViewController , UICollectionViewDataSource, UICollectionViewDelegate{
 
     fileprivate var menuButton : IconButton!
@@ -25,8 +26,12 @@ class LibraryViewController: UIViewController , UICollectionViewDataSource, UICo
     
     var heightRatio: CGFloat = 0.0
     var widthRatio: CGFloat = 0.0
-
     
+    let apiManager = ApiManager(path: "/api/mybooks", method: .get, parameters: ["user":"song"])
+    var bookImg : [String] = []
+    var bookName : [String] = []
+    var bookCate : [String] = []
+    var bookAuthor : [String] = []
     
     fileprivate func prepareBasicUI()
     {
@@ -40,8 +45,8 @@ class LibraryViewController: UIViewController , UICollectionViewDataSource, UICo
         
         prepareNavigationItems(left : [menuButton], right : [textButton, searchButton])
         prepareTitle(with : "READ TITLE")
+        prepareTabBarItem(title: "내서재", image: Icon.check!, selected: selected: Icon.close!)
         
-        prepareTabBarItem(title: "내서재", image: Icon.check!, selected: Icon.close!)
     }
     
     @objc func onSearchBtnClicked()
@@ -76,15 +81,13 @@ class LibraryViewController: UIViewController , UICollectionViewDataSource, UICo
         widthRatio = userDevice.userDeviceWidth()
         
         viewSetUp()
-       
-     
+        
+        setBookList()
+
     }
   
     let reuseIdentifier = "cell"
-    var bookImg = ["1","2","3","4","5","6","7","8","9","10"]
-    var bookName = ["1q84","1q84","1q84","1q84","1q84","1q84","1q84","1q84","1q84","1q84"]
-    var bookCate = ["소설","소설","만화","소설","소설","소설","소설","소설","소설","소설"]
-    var bookAuthor = ["김진명","김진명","김진명","김진명","김진명","김진명","김진명","김진명","김진명","김진명"]
+ 
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -97,7 +100,7 @@ class LibraryViewController: UIViewController , UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! PhotoCaptionCell
-        cell.myImage.image = UIImage(named: bookImg[indexPath.item])
+        cell.myImage.image = UIImage(data: NSData(contentsOf: NSURL(string: bookImg[indexPath.item])! as URL)! as Data)!
         bookInfoSetUp(bookname: bookName[indexPath.item], bookcate: bookCate[indexPath.item], bookauthor: bookAuthor[indexPath.item] ,x: cell.x , y: cell.y)
         return cell
     }
@@ -143,6 +146,22 @@ class LibraryViewController: UIViewController , UICollectionViewDataSource, UICo
         myCollectionView.showsVerticalScrollIndicator = false
     }
     
+    
+    func setBookList(){
+        
+        Alamofire.request(apiManager.url, method: .get, parameters: apiManager.parameters).responseJSON { response in
+            let json = JSON(response.result.value!)
+            for index in 0..<json.count {
+                self.bookImg.append(json[index]["img_src"].stringValue)
+                self.bookAuthor.append(json[index]["author"].stringValue)
+                self.bookCate.append(json[index]["genre"].stringValue)
+                self.bookName.append(json[index]["name"].stringValue)
+            }
+            self.myCollectionView.reloadData()
+        }
+        
+    
+    }
 }
 
 
