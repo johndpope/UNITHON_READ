@@ -11,6 +11,7 @@ import Material
 import AVFoundation
 import Alamofire
 import SwiftyJSON
+
 class LibraryViewController: UIViewController , UICollectionViewDataSource, UICollectionViewDelegate{
 
     fileprivate var menuButton : IconButton!
@@ -45,7 +46,7 @@ class LibraryViewController: UIViewController , UICollectionViewDataSource, UICo
         
         prepareNavigationItems(left : [menuButton], right : [textButton, searchButton])
         prepareTitle(with : "READ TITLE")
-        prepareTabBarItem(title: "내서재", image: Icon.check!, selected: selected: Icon.close!)
+        prepareTabBarItem(title: "내서재", image: Icon.check!, selected: Icon.close!)
         
     }
     

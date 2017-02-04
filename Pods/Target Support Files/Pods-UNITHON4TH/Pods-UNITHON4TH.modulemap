@@ -1,0 +1,6 @@
+framework module Pods_UNITHON4TH {
+  umbrella header "Pods-UNITHON4TH-umbrella.h"
+
+  export *
+  module * { export * }
+}

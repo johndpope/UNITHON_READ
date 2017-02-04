@@ -12,7 +12,7 @@ pod 'FirebaseUI'
 pod 'GoogleMaps'
 pod 'CircleProgressView', :git => 'https://github.com/CardinalNow/iOS-CircleProgressView.git'
 pod 'Alamofire', '~>4.3'
-
+pod 'SwiftyJSON'
   # Pods for UNITHON4TH
 
 end
