@@ -20,17 +20,25 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         //테두리제거
         //self.filterTableView.tableFooterView = UIView()
+
+        let api = ApiManager(path: "/api/users/")
+        api.requestUsers()
+//        api.request(success: {
+//            (data: Dictionary) in
+//            debugPrint(data)
+//            }, fail: {
+//                (error: Error?) in print(error)
+//        })
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    
     let titles = ["기술과학", "문학", "사회학",
                   "언어", "역사", "예술", "자연과학",
                   "종교", "철학", "총류"]
@@ -76,7 +84,7 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchButton = prepareIconButton(icon: Icon.search!)
         searchButton.addTarget(self, action: #selector(onSearchBtnClicked), for: .touchUpInside)
         prepareNavigationItems(left : [searchButton], right : [searchButton])
-        prepareTitle(with : "필터")
+        prepareTitle(with : "필터설정")
         prepareTabBarItem(title: "필터", image: Icon.check!, selected: Icon.close!)
     }
 

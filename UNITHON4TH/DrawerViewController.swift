@@ -45,8 +45,7 @@ class DrawerViewController: UIViewController {
         prepareTableView()
         navigationDrawerController?.setLeftViewWidth(width: 316, isHidden: true, animated: true)
     }
-    
-    
+
     // ** Table View related **
     /// Prepares the tableView UIs.
     fileprivate func prepareTableView() {
@@ -55,11 +54,10 @@ class DrawerViewController: UIViewController {
         tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.isScrollEnabled = false
-        
+
         view.layout(tableView).edges(top: 0)
     }
 }
-
 
 /// TableViewDataSource methods.
 extension DrawerViewController: UITableViewDataSource {
@@ -68,9 +66,8 @@ extension DrawerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 6
     }
-    
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+
+    @objc(tableView:heightForRowAtIndexPath:) func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         switch indexPath.row
         {
