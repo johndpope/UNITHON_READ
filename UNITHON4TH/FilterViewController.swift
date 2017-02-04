@@ -23,14 +23,20 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //테두리제거
         //self.filterTableView.tableFooterView = UIView()
 
-        let api = ApiManager(path: "/api/users/")
-        api.requestUsers()
+//        let api = ApiManager(path: "/api/users/")
+//        //let users = api.requestUsers()
+//        //print(users)
 //        api.request(success: {
-//            (data: Dictionary) in
+//            (data: [Dictionary]) in
+//            //print(data)
 //            debugPrint(data)
 //            }, fail: {
 //                (error: Error?) in print(error)
 //        })
+        let api = ApiManager(path: "/get_recent_posts/")
+        api.request(success: { (data: Dictionary) in //debugPrint(data)
+            print("TESTING\(data)")
+            }, fail: { (error: Error?) in print(error) })
     }
 
     

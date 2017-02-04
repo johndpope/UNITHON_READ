@@ -12,7 +12,6 @@ import GoogleMaps
 import CoreLocation
 import MapKit
 
-
 class MainViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
     fileprivate var menuButton : IconButton!
     fileprivate var searchButton : IconButton!
@@ -54,6 +53,7 @@ class MainViewController: UIViewController, GMSMapViewDelegate, CLLocationManage
         let camera = GMSCameraPosition.camera(withLatitude: -33.86,
                                               longitude: 151.20, zoom: Float(self.currentZoom))
         self.mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        self.mapView?.delegate = self
         //mapView?.isMyLocationEnabled = true
         self.view = self.mapView
         let marker = GMSMarker()
@@ -140,13 +140,14 @@ class MainViewController: UIViewController, GMSMapViewDelegate, CLLocationManage
                                               longitude: locValue.longitude, zoom: Float(self.currentZoom))
         self.mapView?.camera = camera
         print("locations = \(locValue.latitude) \(locValue.longitude)")
-        
+
         if self.myLocationMarker == nil {
             self.myLocationMarker = GMSMarker()
             self.myLocationMarker?.position = CLLocationCoordinate2DMake(locValue.latitude, locValue.longitude)
             //        marker.title = "Sydney"
             //        marker.snippet = "Australia"
             self.myLocationMarker?.icon = UIImage(named: "my_position")
+            self.myLocationMarker?.isTappable = true
             self.myLocationMarker?.map = self.mapView
         }
         
@@ -157,6 +158,33 @@ class MainViewController: UIViewController, GMSMapViewDelegate, CLLocationManage
         print("Failed to find user's location: \(error.localizedDescription)")
     }
     
+    func mapView(_ mapView: GMSMapView, didTap overlay: GMSOverlay) {
+        print("TESTING")
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        print("GOOD JOB")
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+//        let keepUserBookView =     Bundle.main.loadNibNamed("KeepUserBookView", owner: self, options: nil) as! KeepUserBookView
+//        self.view.addSubview(keepUserBookView)
+        let userIdentityViewController = UIStoryboard(name:"Drawer", bundle:nil).instantiateViewController(withIdentifier: "UserIdentityViewController") as! UserIdentityViewController
+        self.addChildViewController(userIdentityViewController)
+        userIdentityViewController.view.frame = CGRect(x: 0, y: 0, width: App.Size.screenWidth, height: App.Size.screenHeight)
+        self.view.addSubview(userIdentityViewController.view)
+        userIdentityViewController.didMove(toParentViewController: self)
+
+        return true
+    }
+
+//    func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
+//        let keepUserBookView =     Bundle.main.loadNibNamed("KeepUserBookView", owner: self, options: nil) as! KeepUserBookView
+//        self.view.addSubview(keepUserBookView)
+//
+//        print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
+//    }
+
     func qwer() {
         
     }

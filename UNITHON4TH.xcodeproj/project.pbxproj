@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2AAF971C8B2F9A1677445172 /* Pods_UNITHON4TH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D57B0429BB8E6100D6ACA8A0 /* Pods_UNITHON4TH.framework */; };
+		333986E51E463DDF00D29775 /* UserIdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333986E41E463DDF00D29775 /* UserIdentityViewController.swift */; };
 		3351AD761E45FF8F00DEDB2F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3351AD751E45FF8F00DEDB2F /* ApiManager.swift */; };
 		3351AD7A1E45FFA300DEDB2F /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3351AD781E45FFA300DEDB2F /* FilterTableViewCell.swift */; };
 		3351AD7B1E45FFA300DEDB2F /* FilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3351AD791E45FFA300DEDB2F /* FilterTableViewCell.xib */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		333986E41E463DDF00D29775 /* UserIdentityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIdentityViewController.swift; sourceTree = "<group>"; };
 		3351AD751E45FF8F00DEDB2F /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		3351AD781E45FFA300DEDB2F /* FilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		3351AD791E45FFA300DEDB2F /* FilterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterTableViewCell.xib; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				3351AD781E45FFA300DEDB2F /* FilterTableViewCell.swift */,
 				3351AD791E45FFA300DEDB2F /* FilterTableViewCell.xib */,
+				333986E41E463DDF00D29775 /* UserIdentityViewController.swift */,
 			);
 			name = filter;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				33CF1B511E45924E00196BD1 /* App.swift in Sources */,
 				F2DC0FCA1E44924800457E1A /* UNITHON4TH.xcdatamodeld in Sources */,
 				F2DC0FE31E44E67B00457E1A /* AppNavigationController.swift in Sources */,
+				333986E51E463DDF00D29775 /* UserIdentityViewController.swift in Sources */,
 				F2DC0FF51E44F57C00457E1A /* CellIdentifier.swift in Sources */,
 				F2DC0FEA1E44EA5200457E1A /* DrawerItem.swift in Sources */,
 				F20C82811E45F9FA00FC7617 /* DeviceResize.swift in Sources */,

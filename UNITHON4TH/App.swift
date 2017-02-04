@@ -39,6 +39,10 @@ struct App {
         static func nanumBarunGothic(size: CGFloat) -> UIFont { return UIFont(name: "NanumBarunGothic", size: size) ?? UIFont.systemFont(ofSize: size) }
     }
     
+    struct Color {
+        static let CommonColor: String = "2D201C"
+    }
+    
     //    struct Logo {
     //        static let titleImage: UIImage = R.image.titleImage()!
     //    }

@@ -22,14 +22,14 @@ struct ApiManager {
     let url: String
     let method: HTTPMethod
     let parameters: Parameters
-
+    
     init(path: String, method: HTTPMethod = .get, parameters: Parameters = [:]) {
         url = server + path
         self.method = method
         self.parameters = parameters
     }
-//    parameters: ["include_docs": "true"]//
-
+    //    parameters: ["include_docs": "true"]//
+    
     func request(success: @escaping(_ data: Dictionary<String, Any>)-> Void, fail: @escaping (_ error: Error?)-> Void) {
         Alamofire.request(url, method: method, parameters: parameters).responseJSON { response in
             if response.result.isSuccess {
@@ -40,7 +40,7 @@ struct ApiManager {
             }
         }
     }
-
+    
     func requestUsers() {
         Alamofire.request(url).responseJSON { response in
             debugPrint(response)
